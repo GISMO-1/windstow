@@ -1,0 +1,30 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install deps
+        run: |
+          cd app
+          pnpm install
+      - name: Build
+        run: |
+          cd app
+          pnpm tauri build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: winstow-bundle
+          path: app/src-tauri/target/release/bundle/msi/*.msi

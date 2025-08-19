@@ -1,0 +1,13 @@
+[workspace]
+members = ["core", "app/src-tauri"]
+default-members = ["core", "."]
+
+[package]
+name = "winstow-root"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dev-dependencies]
+core = { path = "core" }
+tempfile = "3"
