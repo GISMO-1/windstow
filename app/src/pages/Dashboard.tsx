@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { open } from '@tauri-apps/api/dialog';
+import { open } from '@tauri-apps/plugin-dialog';
 import { appDataDir, join } from '@tauri-apps/api/path';
-import { readTextFile, writeFile, createDir } from '@tauri-apps/api/fs';
+import { readTextFile, writeFile, createDir } from '@tauri-apps/plugin-fs';
 import { scanStart, scanStatus, scanCancel, scanResults, FileInfo, ScanStatus } from '../ipc/commands';
 import Progress from '../components/Progress';
 import { Treemap } from 'recharts';
