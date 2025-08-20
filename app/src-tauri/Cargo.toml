@@ -1,10 +1,5 @@
-[package]
-name = "windstow-app"
-version = "0.1.0"
-edition = "2021"
-
 [dependencies]
-tauri = { version = "2", features = [] }
+tauri = { version = "2", features = ["shell-open"] }
 tauri-plugin-shell = "2"
 tauri-plugin-dialog = "2"
 tauri-plugin-fs = "2"
