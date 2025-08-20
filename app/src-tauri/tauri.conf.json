@@ -1,25 +1,13 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "WinStow",
-  "version": "0.1.0",
-  "identifier": "com.gismo.windstow",
-
+  "identifier": "com.windstow.app",
   "build": {
+    "beforeDevCommand": "pnpm dev",
+    "beforeBuildCommand": "pnpm build",
     "devUrl": "http://localhost:5173",
-    "frontendDist": "../dist",
-    "beforeDevCommand": "vite",
-    "beforeBuildCommand": "vite build"
+    "frontendDist": "../dist"
   },
-
-  "app": {
-    "windows": [
-      { "title": "WinStow", "width": 1100, "height": 720, "resizable": true }
-    ]
-  },
-
   "bundle": {
-    "active": true,
-    "targets": ["msi", "nsis"],
-    "windows": { "wix": { "language": "en-US" } }
+    "targets": ["msi"]
   }
 }
