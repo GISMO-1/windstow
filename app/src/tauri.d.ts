@@ -1,4 +1,4 @@
-declare module '@tauri-apps/api/tauri';
-declare module '@tauri-apps/api/dialog';
-declare module '@tauri-apps/api/fs';
+declare module '@tauri-apps/api/core';
+declare module '@tauri-apps/plugin-dialog';
+declare module '@tauri-apps/plugin-fs';
 declare module '@tauri-apps/api/path';
